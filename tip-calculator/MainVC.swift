@@ -38,7 +38,7 @@ class MainVC: UIViewController {
     }
     
     private func makeLayout() {
-        view.backgroundColor = .gray
+        view.backgroundColor = ThemeColor.backgroundColor
     }
     
     private func makeHierarchy() {

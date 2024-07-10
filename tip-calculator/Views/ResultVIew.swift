@@ -20,7 +20,7 @@ class ResultVIew: UIView {
     }
     
     private func makeLayout() {
-        self.backgroundColor = .black
+        self.backgroundColor = .gray
     }
     
 }
