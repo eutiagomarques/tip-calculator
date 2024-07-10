@@ -25,6 +25,10 @@
 		565324412C3DD1D800AA430C /* tip_calculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565324402C3DD1D800AA430C /* tip_calculatorTests.swift */; };
 		5653244B2C3DD1D800AA430C /* tip_calculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5653244A2C3DD1D800AA430C /* tip_calculatorUITests.swift */; };
 		5653244D2C3DD1D800AA430C /* tip_calculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5653244C2C3DD1D800AA430C /* tip_calculatorUITestsLaunchTests.swift */; };
+		56841D192C3EB67B00E6ED81 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56841D182C3EB67B00E6ED81 /* ThemeColor.swift */; };
+		56841D1B2C3EB84400E6ED81 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56841D1A2C3EB84400E6ED81 /* UIColor.swift */; };
+		56841D1D2C3EBE6300E6ED81 /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56841D1C2C3EBE6300E6ED81 /* ThemeFont.swift */; };
+		56841D202C3EC9B800E6ED81 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56841D1F2C3EC9B800E6ED81 /* LabelFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,10 @@
 		565324462C3DD1D800AA430C /* tip-calculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tip-calculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5653244A2C3DD1D800AA430C /* tip_calculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tip_calculatorUITests.swift; sourceTree = "<group>"; };
 		5653244C2C3DD1D800AA430C /* tip_calculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tip_calculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		56841D182C3EB67B00E6ED81 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
+		56841D1A2C3EB84400E6ED81 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		56841D1C2C3EBE6300E6ED81 /* ThemeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
+		56841D1F2C3EC9B800E6ED81 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +145,9 @@
 		565324282C3DD1D600AA430C /* tip-calculator */ = {
 			isa = PBXGroup;
 			children = (
+				56841D1E2C3EC9A800E6ED81 /* Factory */,
+				56841D172C3EB66D00E6ED81 /* Config */,
+				56841D142C3EB60700E6ED81 /* Extensions */,
 				561D16CE2C3DE1EF00EC6007 /* Views */,
 				565324292C3DD1D600AA430C /* AppDelegate.swift */,
 				5653242B2C3DD1D600AA430C /* SceneDelegate.swift */,
@@ -163,6 +174,31 @@
 				5653244C2C3DD1D800AA430C /* tip_calculatorUITestsLaunchTests.swift */,
 			);
 			path = "tip-calculatorUITests";
+			sourceTree = "<group>";
+		};
+		56841D142C3EB60700E6ED81 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				56841D1A2C3EB84400E6ED81 /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		56841D172C3EB66D00E6ED81 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				56841D182C3EB67B00E6ED81 /* ThemeColor.swift */,
+				56841D1C2C3EBE6300E6ED81 /* ThemeFont.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		56841D1E2C3EC9A800E6ED81 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				56841D1F2C3EC9B800E6ED81 /* LabelFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56841D1D2C3EBE6300E6ED81 /* ThemeFont.swift in Sources */,
 				561D16D22C3DE21000EC6007 /* ResultVIew.swift in Sources */,
 				561D16CD2C3DDED100EC6007 /* MainVC.swift in Sources */,
 				561D16D02C3DE20700EC6007 /* LogoView.swift in Sources */,
@@ -318,7 +355,10 @@
 				5653242A2C3DD1D600AA430C /* AppDelegate.swift in Sources */,
 				5653242C2C3DD1D600AA430C /* SceneDelegate.swift in Sources */,
 				561D16D82C3DE24A00EC6007 /* SplitInputView.swift in Sources */,
+				56841D1B2C3EB84400E6ED81 /* UIColor.swift in Sources */,
+				56841D202C3EC9B800E6ED81 /* LabelFactory.swift in Sources */,
 				561D16D62C3DE23C00EC6007 /* TipInputView.swift in Sources */,
+				56841D192C3EB67B00E6ED81 /* ThemeColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
