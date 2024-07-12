@@ -1,5 +1,5 @@
 //
-//  UIColor.swift
+//  UIColor+Extension.swift
 //  tip-calculator
 //
 //  Created by Tiago de Souza Marques on 10/07/24.
