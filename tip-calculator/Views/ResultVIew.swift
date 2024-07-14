@@ -17,9 +17,9 @@ class ResultVIew: UIView {
         let label = UILabel()
         label.textAlignment = .center
         let text = NSMutableAttributedString(
-            string: "$0,00",
+            string: "R$0,00",
             attributes: [.font: ThemeFont.bold(ofSize: 48)])
-        text.addAttributes([.font: ThemeFont.bold(ofSize: 24)], range: NSMakeRange(0, 1))
+        text.addAttributes([.font: ThemeFont.bold(ofSize: 24)], range: NSMakeRange(0, 2))
         label.attributedText = text
         label.textColor = ThemeColor.textColor
         return label
@@ -45,9 +45,9 @@ class ResultVIew: UIView {
     
     private lazy var hStackView: UIStackView = {
        let stackView = UIStackView(arrangedSubviews: [
-        AmountView(),
+        AmountView(title: "Conta", textAlignment: .left),
         UIView(),
-        AmountView()
+        AmountView(title: "Serviço", textAlignment: .right)
        ])
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually

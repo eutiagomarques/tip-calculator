@@ -9,8 +9,44 @@ import UIKit
 
 class AmountView: UIView {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private var title: String
+    private var textAlignment: NSTextAlignment
+    
+    private lazy var titleLabel: UILabel = {
+        LabelFactory.build(text: title,
+                           font: ThemeFont.regular(ofSize: 18),
+                           textAlignment: textAlignment)
+    }()
+    
+    private lazy var amountLabel: UILabel = {
+       let label = UILabel()
+        label.textColor = ThemeColor.primaryColor
+        label.textAlignment = textAlignment
+        let text = NSMutableAttributedString(
+            string: "R$0,00",
+            attributes: [
+                .font: ThemeFont.bold(ofSize: 24)
+            ])
+        text.addAttributes([
+            .font: ThemeFont.bold(ofSize: 15)
+        ], range: NSMakeRange(0, 2))
+        label.attributedText = text
+        return label
+    }()
+    
+    private lazy var vStackView: UIStackView = {
+       let stackView = UIStackView(arrangedSubviews: [
+        titleLabel,
+        amountLabel
+       ])
+        stackView.axis = .vertical
+        return stackView
+    }()
+    
+    init(title: String, textAlignment: NSTextAlignment) {
+        self.title = title
+        self.textAlignment = textAlignment
+        super.init(frame: .zero)
         makeLayout()
         makeHierarchy()
         makeConstraints()
@@ -21,13 +57,16 @@ class AmountView: UIView {
     }
     
     private func makeLayout() {
-        self.backgroundColor = .red
     }
     
     private func makeHierarchy() {
+        addSubview(vStackView)
     }
     
     private func makeConstraints() {
+        vStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
 
     }
 }
