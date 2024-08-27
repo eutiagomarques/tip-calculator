@@ -11,6 +11,7 @@ class BilllInputView: UIView {
     
     private let headerView: HeaderView = {
         let view = HeaderView()
+        view.setViewText(topLabel: "Valor", bottomLabel: "Total")
         return view
     }()
     
