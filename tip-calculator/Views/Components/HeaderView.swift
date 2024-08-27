@@ -1,13 +1,15 @@
 //
-//  SplitInputView.swift
+//  HeaderView.swift
 //  tip-calculator
 //
-//  Created by Tiago de Souza Marques on 09/07/24.
+//  Created by Tiago de Souza Marques on 27/08/24.
 //
+
+import Foundation
 
 import UIKit
 
-class SplitInputView: UIView {
+class HeaderView: UIView {
     
     
     override init(frame: CGRect) {

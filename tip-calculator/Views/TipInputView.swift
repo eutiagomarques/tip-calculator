@@ -13,6 +13,8 @@ class TipInputView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         makeLayout()
+        makeHierarchy()
+        makeConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -20,6 +22,14 @@ class TipInputView: UIView {
     }
     
     private func makeLayout() {
-        self.backgroundColor = .yellow
+        
+    }
+    
+    private func makeHierarchy() {
+        
+    }
+    
+    private func makeConstraints() {
+
     }
 }

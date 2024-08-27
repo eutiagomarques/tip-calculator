@@ -67,6 +67,5 @@ class AmountView: UIView {
         vStackView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-
     }
 }

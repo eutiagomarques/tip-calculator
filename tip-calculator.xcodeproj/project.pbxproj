@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5617D51E2C7E7D5C00075E0E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617D51D2C7E7D5C00075E0E /* HeaderView.swift */; };
 		561D16C02C3DD6E000EC6007 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 561D16BF2C3DD6E000EC6007 /* CombineCocoa */; };
 		561D16C32C3DD6E800EC6007 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 561D16C22C3DD6E800EC6007 /* CombineCocoa */; };
 		561D16C52C3DD6EC00EC6007 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 561D16C42C3DD6EC00EC6007 /* CombineCocoa */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5617D51D2C7E7D5C00075E0E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		561D16CC2C3DDED100EC6007 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		561D16CF2C3DE20700EC6007 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		561D16D12C3DE21000EC6007 /* ResultVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVIew.swift; sourceTree = "<group>"; };
@@ -106,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5617D51F2C7E7D9700075E0E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5617D51D2C7E7D5C00075E0E /* HeaderView.swift */,
+				5671C96F2C41C38B0037502F /* AmountView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		561D16C12C3DD6E800EC6007 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,12 +127,12 @@
 		561D16CE2C3DE1EF00EC6007 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5617D51F2C7E7D9700075E0E /* Components */,
 				561D16CF2C3DE20700EC6007 /* LogoView.swift */,
 				561D16D12C3DE21000EC6007 /* ResultVIew.swift */,
 				561D16D32C3DE22700EC6007 /* BilllInputView.swift */,
 				561D16D52C3DE23C00EC6007 /* TipInputView.swift */,
 				561D16D72C3DE24A00EC6007 /* SplitInputView.swift */,
-				5671C96F2C41C38B0037502F /* AmountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -363,6 +374,7 @@
 				5653242C2C3DD1D600AA430C /* SceneDelegate.swift in Sources */,
 				5671C9722C41C7A90037502F /* UIView+Extension.swift in Sources */,
 				561D16D82C3DE24A00EC6007 /* SplitInputView.swift in Sources */,
+				5617D51E2C7E7D5C00075E0E /* HeaderView.swift in Sources */,
 				56841D1B2C3EB84400E6ED81 /* UIColor+Extension.swift in Sources */,
 				56841D202C3EC9B800E6ED81 /* LabelFactory.swift in Sources */,
 				561D16D62C3DE23C00EC6007 /* TipInputView.swift in Sources */,
