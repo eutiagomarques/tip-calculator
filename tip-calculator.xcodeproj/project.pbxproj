@@ -26,6 +26,7 @@
 		565324412C3DD1D800AA430C /* tip_calculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565324402C3DD1D800AA430C /* tip_calculatorTests.swift */; };
 		5653244B2C3DD1D800AA430C /* tip_calculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5653244A2C3DD1D800AA430C /* tip_calculatorUITests.swift */; };
 		5653244D2C3DD1D800AA430C /* tip_calculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5653244C2C3DD1D800AA430C /* tip_calculatorUITestsLaunchTests.swift */; };
+		565A7EFA2C7FCF9C00F5F617 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A7EF92C7FCF9C00F5F617 /* Tip.swift */; };
 		5671C9702C41C38B0037502F /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5671C96F2C41C38B0037502F /* AmountView.swift */; };
 		5671C9722C41C7A90037502F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5671C9712C41C7A90037502F /* UIView+Extension.swift */; };
 		56841D192C3EB67B00E6ED81 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56841D182C3EB67B00E6ED81 /* ThemeColor.swift */; };
@@ -70,6 +71,7 @@
 		565324462C3DD1D800AA430C /* tip-calculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tip-calculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5653244A2C3DD1D800AA430C /* tip_calculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tip_calculatorUITests.swift; sourceTree = "<group>"; };
 		5653244C2C3DD1D800AA430C /* tip_calculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tip_calculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		565A7EF92C7FCF9C00F5F617 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		5671C96F2C41C38B0037502F /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
 		5671C9712C41C7A90037502F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		56841D182C3EB67B00E6ED81 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		565324282C3DD1D600AA430C /* tip-calculator */ = {
 			isa = PBXGroup;
 			children = (
+				565A7EF82C7FCF8700F5F617 /* Model */,
 				56841D1E2C3EC9A800E6ED81 /* Factory */,
 				56841D172C3EB66D00E6ED81 /* Config */,
 				56841D142C3EB60700E6ED81 /* Extensions */,
@@ -190,6 +193,14 @@
 				5653244C2C3DD1D800AA430C /* tip_calculatorUITestsLaunchTests.swift */,
 			);
 			path = "tip-calculatorUITests";
+			sourceTree = "<group>";
+		};
+		565A7EF82C7FCF8700F5F617 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				565A7EF92C7FCF9C00F5F617 /* Tip.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		56841D142C3EB60700E6ED81 /* Extensions */ = {
@@ -365,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56841D1D2C3EBE6300E6ED81 /* ThemeFont.swift in Sources */,
+				565A7EFA2C7FCF9C00F5F617 /* Tip.swift in Sources */,
 				561D16D22C3DE21000EC6007 /* ResultVIew.swift in Sources */,
 				561D16CD2C3DDED100EC6007 /* MainVC.swift in Sources */,
 				561D16D02C3DE20700EC6007 /* LogoView.swift in Sources */,
