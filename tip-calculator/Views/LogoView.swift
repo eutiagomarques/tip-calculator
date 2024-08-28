@@ -18,16 +18,16 @@ class LogoView: UIView {
     private let topLabel: UILabel = {
         let label = UILabel()
         let text = NSMutableAttributedString(
-            string: "Sr. GORJETA",
+            string: "Mr. DOLOROSA",
             attributes: [.font: ThemeFont.demiBold(ofSize: 16)])
-        text.addAttributes([.font: ThemeFont.bold(ofSize: 24)], range: NSMakeRange(3, 8))
+        text.addAttributes([.font: ThemeFont.bold(ofSize: 24)], range: NSMakeRange(3, 9))
         label.attributedText = text
         label.textColor = ThemeColor.textColor
         return label
     }()
     
     private let bottomLabel: UILabel = {
-       return LabelFactory.build(text: "Calculadora", font: ThemeFont.demiBold(ofSize: 20), textAlignment: .left)
+       return LabelFactory.build(text: "Calculator", font: ThemeFont.demiBold(ofSize: 20), textAlignment: .left)
     }()
     
     private lazy var hStackView: UIStackView = {

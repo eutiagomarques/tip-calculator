@@ -11,7 +11,7 @@ class TipInputView: UIView {
     
     private let headerView: HeaderView = {
         let view = HeaderView()
-        view.setViewText(topLabel: "Valor", bottomLabel: "Total")
+        view.setViewText(topLabel: "Taxa", bottomLabel: "Serviço")
         return view
     }()
     
