@@ -7,14 +7,20 @@
 
 import UIKit
 import SnapKit
+import Combine
+import CombineCocoa
 
-class MainVC: UIViewController {
+class MainViewController: UIViewController {
+    
+    private let viewModel: MainViewModel
     
     private let logoView = LogoView()
     private let resultView = ResultVIew()
     private let billInputView = BilllInputView()
     private let tipInputView = TipInputView()
     private let splitInputView = SplitInputView()
+    
+    private var cancellables = Set<AnyCancellable>()
     
     private lazy var mainStackView: UIStackView = {
        let stackView = UIStackView(arrangedSubviews: [
@@ -29,12 +35,40 @@ class MainVC: UIViewController {
         stackView.spacing = 36
         return stackView
     }()
-
+    
+    init(viewModel: MainViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         makeLayout()
         makeHierarchy()
         makeConstraints()
+        makeBinds()
+    }
+    
+    private func makeBinds() {
+        
+        let inputPublisher = MainViewModel.inputPublisher(
+            billPublisher: billInputView.valuePublisher,
+            tipPublisher: Just(.tenPercent).eraseToAnyPublisher(),
+            splitPublisher: Just(2).eraseToAnyPublisher()
+        )
+        
+        let outputPublisher = viewModel.handler(input: inputPublisher)
+        
+        outputPublisher.updateViewPublisher
+            .sink { result in
+                print("Result: \(result) ")
+            }
+            .store(in: &cancellables)
+        
     }
     
     private func makeLayout() {

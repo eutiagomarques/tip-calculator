@@ -6,8 +6,17 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 class BilllInputView: UIView {
+    
+    private let billSubject = PassthroughSubject<Double, Never>()
+    var valuePublisher: AnyPublisher<Double, Never> {
+        return billSubject.eraseToAnyPublisher()
+    }
+    
+    private var cancellables = Set<AnyCancellable>()
     
     private let headerView: HeaderView = {
         let view = HeaderView()
@@ -37,7 +46,6 @@ class BilllInputView: UIView {
         textField.setContentHuggingPriority(.defaultLow, for: .horizontal)
         textField.tintColor = ThemeColor.textColor
         textField.textColor = ThemeColor.textColor
-        // adiciona toolbar
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 36))
         toolbar.barStyle = .default
         toolbar.sizeToFit()
@@ -55,17 +63,19 @@ class BilllInputView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        makeLayout()
         makeHierarchy()
         makeConstraints()
+        makeBinds()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func makeLayout() {
-        
+    private func makeBinds() {
+        textField.textPublisher.sink { [unowned self] text in
+            billSubject.send(text?.toDouble() ?? 0.0)
+        }.store(in: &cancellables)
     }
     
     private func makeHierarchy() {

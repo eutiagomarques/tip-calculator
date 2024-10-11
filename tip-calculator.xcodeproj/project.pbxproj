@@ -13,12 +13,14 @@
 		561D16C52C3DD6EC00EC6007 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 561D16C42C3DD6EC00EC6007 /* CombineCocoa */; };
 		561D16C82C3DD70800EC6007 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 561D16C72C3DD70800EC6007 /* SnapKit */; };
 		561D16CB2C3DD73E00EC6007 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 561D16CA2C3DD73E00EC6007 /* SnapshotTesting */; };
-		561D16CD2C3DDED100EC6007 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D16CC2C3DDED100EC6007 /* MainVC.swift */; };
+		561D16CD2C3DDED100EC6007 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D16CC2C3DDED100EC6007 /* MainViewController.swift */; };
 		561D16D02C3DE20700EC6007 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D16CF2C3DE20700EC6007 /* LogoView.swift */; };
 		561D16D22C3DE21000EC6007 /* ResultVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D16D12C3DE21000EC6007 /* ResultVIew.swift */; };
 		561D16D42C3DE22700EC6007 /* BilllInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D16D32C3DE22700EC6007 /* BilllInputView.swift */; };
 		561D16D62C3DE23C00EC6007 /* TipInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D16D52C3DE23C00EC6007 /* TipInputView.swift */; };
 		561D16D82C3DE24A00EC6007 /* SplitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D16D72C3DE24A00EC6007 /* SplitInputView.swift */; };
+		56203A842CB899DB00D20205 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56203A832CB899DB00D20205 /* Result.swift */; };
+		56203A862CB89F5500D20205 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56203A852CB89F5500D20205 /* String+Extension.swift */; };
 		5653242A2C3DD1D600AA430C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565324292C3DD1D600AA430C /* AppDelegate.swift */; };
 		5653242C2C3DD1D600AA430C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5653242B2C3DD1D600AA430C /* SceneDelegate.swift */; };
 		565324332C3DD1D800AA430C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565324322C3DD1D800AA430C /* Assets.xcassets */; };
@@ -27,6 +29,7 @@
 		5653244B2C3DD1D800AA430C /* tip_calculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5653244A2C3DD1D800AA430C /* tip_calculatorUITests.swift */; };
 		5653244D2C3DD1D800AA430C /* tip_calculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5653244C2C3DD1D800AA430C /* tip_calculatorUITestsLaunchTests.swift */; };
 		565A7EFA2C7FCF9C00F5F617 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A7EF92C7FCF9C00F5F617 /* Tip.swift */; };
+		5661B7422CB7415D000B25E5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661B7412CB7415D000B25E5 /* MainViewModel.swift */; };
 		5671C9702C41C38B0037502F /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5671C96F2C41C38B0037502F /* AmountView.swift */; };
 		5671C9722C41C7A90037502F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5671C9712C41C7A90037502F /* UIView+Extension.swift */; };
 		56841D192C3EB67B00E6ED81 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56841D182C3EB67B00E6ED81 /* ThemeColor.swift */; };
@@ -54,12 +57,14 @@
 
 /* Begin PBXFileReference section */
 		5617D51D2C7E7D5C00075E0E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		561D16CC2C3DDED100EC6007 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		561D16CC2C3DDED100EC6007 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		561D16CF2C3DE20700EC6007 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		561D16D12C3DE21000EC6007 /* ResultVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVIew.swift; sourceTree = "<group>"; };
 		561D16D32C3DE22700EC6007 /* BilllInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilllInputView.swift; sourceTree = "<group>"; };
 		561D16D52C3DE23C00EC6007 /* TipInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipInputView.swift; sourceTree = "<group>"; };
 		561D16D72C3DE24A00EC6007 /* SplitInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitInputView.swift; sourceTree = "<group>"; };
+		56203A832CB899DB00D20205 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		56203A852CB89F5500D20205 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		565324262C3DD1D600AA430C /* tip-calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tip-calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		565324292C3DD1D600AA430C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5653242B2C3DD1D600AA430C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +77,7 @@
 		5653244A2C3DD1D800AA430C /* tip_calculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tip_calculatorUITests.swift; sourceTree = "<group>"; };
 		5653244C2C3DD1D800AA430C /* tip_calculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tip_calculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		565A7EF92C7FCF9C00F5F617 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
+		5661B7412CB7415D000B25E5 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		5671C96F2C41C38B0037502F /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
 		5671C9712C41C7A90037502F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		56841D182C3EB67B00E6ED81 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
@@ -173,7 +179,8 @@
 				565324322C3DD1D800AA430C /* Assets.xcassets */,
 				565324342C3DD1D800AA430C /* LaunchScreen.storyboard */,
 				565324372C3DD1D800AA430C /* Info.plist */,
-				561D16CC2C3DDED100EC6007 /* MainVC.swift */,
+				561D16CC2C3DDED100EC6007 /* MainViewController.swift */,
+				5661B7412CB7415D000B25E5 /* MainViewModel.swift */,
 			);
 			path = "tip-calculator";
 			sourceTree = "<group>";
@@ -199,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				565A7EF92C7FCF9C00F5F617 /* Tip.swift */,
+				56203A832CB899DB00D20205 /* Result.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +216,7 @@
 			children = (
 				56841D1A2C3EB84400E6ED81 /* UIColor+Extension.swift */,
 				5671C9712C41C7A90037502F /* UIView+Extension.swift */,
+				56203A852CB89F5500D20205 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -375,14 +384,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56203A842CB899DB00D20205 /* Result.swift in Sources */,
 				56841D1D2C3EBE6300E6ED81 /* ThemeFont.swift in Sources */,
 				565A7EFA2C7FCF9C00F5F617 /* Tip.swift in Sources */,
+				56203A862CB89F5500D20205 /* String+Extension.swift in Sources */,
 				561D16D22C3DE21000EC6007 /* ResultVIew.swift in Sources */,
-				561D16CD2C3DDED100EC6007 /* MainVC.swift in Sources */,
+				561D16CD2C3DDED100EC6007 /* MainViewController.swift in Sources */,
 				561D16D02C3DE20700EC6007 /* LogoView.swift in Sources */,
 				561D16D42C3DE22700EC6007 /* BilllInputView.swift in Sources */,
 				5671C9702C41C38B0037502F /* AmountView.swift in Sources */,
 				5653242A2C3DD1D600AA430C /* AppDelegate.swift in Sources */,
+				5661B7422CB7415D000B25E5 /* MainViewModel.swift in Sources */,
 				5653242C2C3DD1D600AA430C /* SceneDelegate.swift in Sources */,
 				5671C9722C41C7A90037502F /* UIView+Extension.swift in Sources */,
 				561D16D82C3DE24A00EC6007 /* SplitInputView.swift in Sources */,
