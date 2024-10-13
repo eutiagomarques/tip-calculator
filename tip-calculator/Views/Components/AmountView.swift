@@ -68,4 +68,12 @@ class AmountView: UIView {
             make.edges.equalToSuperview()
         }
     }
+    
+    func handler(value: Double) {
+        let text: NSMutableAttributedString = NSMutableAttributedString(
+            string: value.currencyFormat,
+            attributes: [.font: ThemeFont.bold(ofSize: 24)])
+        text.addAttributes([.font: ThemeFont.bold(ofSize: 16)], range: NSMakeRange(0, 2))
+        amountLabel.attributedText = text
+    }
 }

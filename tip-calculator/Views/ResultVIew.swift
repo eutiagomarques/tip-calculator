@@ -31,6 +31,14 @@ class ResultVIew: UIView {
        return view
     }()
     
+    private let totalBillView: AmountView = {
+        return AmountView(title: "Conta", textAlignment: .left)
+    }()
+    
+    private let totalTipView: AmountView = {
+        return AmountView(title: "Serviço", textAlignment: .right)
+    }()
+    
     private lazy var vStackView: UIStackView = {
        let stackView = UIStackView(arrangedSubviews: [
         headerLabel,
@@ -45,9 +53,9 @@ class ResultVIew: UIView {
     
     private lazy var hStackView: UIStackView = {
        let stackView = UIStackView(arrangedSubviews: [
-        AmountView(title: "Conta", textAlignment: .left),
+        totalBillView,
         UIView(),
-        AmountView(title: "Serviço", textAlignment: .right)
+        totalTipView
        ])
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
@@ -88,5 +96,16 @@ class ResultVIew: UIView {
         separatorView.snp.makeConstraints{ make in
             make.height.equalTo(2)
         }
+    }
+    
+    func handler(result: Result) {
+        let text = NSMutableAttributedString(
+            string: result.amountPerPerson.currencyFormat,
+            attributes: [.font: ThemeFont.bold(ofSize: 48)])
+        text.addAttributes([.font: ThemeFont.bold(ofSize: 24)], range: NSMakeRange(0, 2))
+        amountPerPersonLabel.attributedText = text
+        
+        totalBillView.handler(value: result.totalBill)
+        totalTipView.handler(value: result.totalTip)
     }
 }
