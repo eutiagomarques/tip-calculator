@@ -57,15 +57,15 @@ class MainViewController: UIViewController {
         
         let inputPublisher = MainViewModel.inputPublisher(
             billPublisher: billInputView.valuePublisher,
-            tipPublisher: Just(.tenPercent).eraseToAnyPublisher(),
-            splitPublisher: Just(2).eraseToAnyPublisher()
+            tipPublisher: tipInputView.valuePublisher,
+            splitPublisher: splitInputView.valuePublisher
         )
         
         let outputPublisher = viewModel.handler(input: inputPublisher)
         
         outputPublisher.updateViewPublisher
             .sink { result in
-                print("Result: \(result) ")
+                self.resultView.handler(result: result)
             }
             .store(in: &cancellables)
         

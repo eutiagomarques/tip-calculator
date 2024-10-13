@@ -24,8 +24,36 @@ class MainViewModel {
     
     func handler(input: inputPublisher) -> outputPublisher {
         
-        let result = Result(amountPerPerson: 100, totalBill: 500, totalTip: 20)
-        
-        return outputPublisher(updateViewPublisher: Just(result).eraseToAnyPublisher())
+        let updateViewPublisher = Publishers.CombineLatest3(
+            input.billPublisher,
+            input.tipPublisher,
+            input.splitPublisher)
+            .map { bill, tip, split in
+                let totalTip = self.getTipValue(bill: bill, tip: tip)
+                let totalBill = self.getTotalBill(bill: bill, tip: tip)
+                let amountPerPerson = totalBill / Double(split)
+                return Result(amountPerPerson: amountPerPerson, totalBill: totalBill, totalTip: totalTip)
+            }.eraseToAnyPublisher()
+                
+        return outputPublisher(updateViewPublisher: updateViewPublisher)
+    }
+    private func getTotalBill(bill: Double, tip: Tip) -> Double {
+        return bill + getTipValue(bill: bill, tip: tip)
+    }
+    
+    private func getTipValue(bill: Double,tip: Tip) -> Double {
+        switch tip {
+        case .tenPercent:
+            return bill * 0.10
+        case .fifteenPercent:
+            return bill * 0.15
+        case .twentyPercent:
+            return bill * 0.20
+        case .custom(let value):
+            let tipPercentage = Double(value) / 100
+            return bill * tipPercentage
+        case .none:
+            return 0
+        }
     }
 }

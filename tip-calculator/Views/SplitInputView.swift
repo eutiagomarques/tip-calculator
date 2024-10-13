@@ -6,8 +6,16 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 class SplitInputView: UIView {
+    
+    private let splitSubject = CurrentValueSubject<Int, Never>(1)
+    var valuePublisher: AnyPublisher<Int, Never> {
+        return splitSubject.removeDuplicates().eraseToAnyPublisher()
+    }
+    private var cancellables = Set<AnyCancellable>()
     
     private let headerView: HeaderView = {
         let view = HeaderView()
@@ -19,13 +27,22 @@ class SplitInputView: UIView {
         let button = buildButton(text: "-",
                                  corner: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
         button.tintColor = .white
+        button.tapPublisher.flatMap { _ in
+            Just(self.splitSubject.value == 1 ? 1 : self.splitSubject.value - 1)
+        }.assign(to: \.value, on: splitSubject)
+            .store(in: &cancellables)
         return button
     }()
     
     private lazy var incrementButton: UIButton = {
-        let button = buildButton(text: "+",
-                                 corner: [.layerMaxXMinYCorner, .layerMaxXMaxYCorner])
+        let button = buildButton(
+            text: "+",
+            corner: [.layerMaxXMinYCorner, .layerMaxXMaxYCorner])
         button.tintColor = .white
+        button.tapPublisher.flatMap { _ in
+            Just(self.splitSubject.value + 1)
+        }.assign(to: \.value, on: splitSubject)
+            .store(in: &cancellables)
         return button
     }()
     
@@ -59,7 +76,9 @@ class SplitInputView: UIView {
     }
     
     private func makeLayout() {
-        
+        splitSubject.sink { [unowned self] value in
+            self.splitNumberLabel.text = String(value)
+        }.store(in: &cancellables)
     }
     
     private func makeHierarchy() {
