@@ -25,7 +25,7 @@ O projeto utiliza o padrão **MVVM (Model-View-ViewModel)** com uma abordagem ro
 * **UI Thread Safety**: Garantia de que as atualizações de interface ocorrem na Main Thread através do `.receive(on: RunLoop.main)`.
 * 
 * 
-<img width="1206" height="2622" alt="Simulator Screenshot - iPhone 17 Pro - 2026-02-28 at 12 40 35" src="https://github.com/user-attachments/assets/601a73b0-6001-4808-bcb7-792854306f0b" />
+<img width="400" height="800" alt="Simulator Screenshot - iPhone 17 Pro - 2026-02-28 at 12 40 35" src="https://github.com/user-attachments/assets/601a73b0-6001-4808-bcb7-792854306f0b" />
 
 
 
