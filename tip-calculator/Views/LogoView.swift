@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 class LogoView: UIView {
     
@@ -66,7 +68,7 @@ class LogoView: UIView {
     }
     
     private func makeLayout() {
-        
+        isUserInteractionEnabled = true
     }
     
     private func makeHierarchy() {

@@ -38,6 +38,8 @@
 		56841D1B2C3EB84400E6ED81 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56841D1A2C3EB84400E6ED81 /* UIColor+Extension.swift */; };
 		56841D1D2C3EBE6300E6ED81 /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56841D1C2C3EBE6300E6ED81 /* ThemeFont.swift */; };
 		56841D202C3EC9B800E6ED81 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56841D1F2C3EC9B800E6ED81 /* LabelFactory.swift */; };
+		AC87C1302F62302400977814 /* click.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AC87C12F2F62302400977814 /* click.m4a */; };
+		AC87C1332F62305600977814 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87C1322F62305200977814 /* AudioPlayerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		56841D1A2C3EB84400E6ED81 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		56841D1C2C3EBE6300E6ED81 /* ThemeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
 		56841D1F2C3EC9B800E6ED81 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
+		AC87C12F2F62302400977814 /* click.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = click.m4a; sourceTree = "<group>"; };
+		AC87C1322F62305200977814 /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,8 @@
 		565324282C3DD1D600AA430C /* tip-calculator */ = {
 			isa = PBXGroup;
 			children = (
+				AC87C1312F62304C00977814 /* Service */,
+				AC87C12E2F62300D00977814 /* Resource */,
 				565A7EF82C7FCF8700F5F617 /* Model */,
 				56841D1E2C3EC9A800E6ED81 /* Factory */,
 				56841D172C3EB66D00E6ED81 /* Config */,
@@ -242,6 +248,22 @@
 				56841D1F2C3EC9B800E6ED81 /* LabelFactory.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		AC87C12E2F62300D00977814 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				AC87C12F2F62302400977814 /* click.m4a */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		AC87C1312F62304C00977814 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AC87C1322F62305200977814 /* AudioPlayerService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC87C1302F62302400977814 /* click.m4a in Resources */,
 				565324332C3DD1D800AA430C /* Assets.xcassets in Resources */,
 				565324362C3DD1D800AA430C /* Base in Resources */,
 			);
@@ -391,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56203A842CB899DB00D20205 /* Result.swift in Sources */,
+				AC87C1332F62305600977814 /* AudioPlayerService.swift in Sources */,
 				56841D1D2C3EBE6300E6ED81 /* ThemeFont.swift in Sources */,
 				566A54602CBC546900627B50 /* Double+Extension.swift in Sources */,
 				566A545E2CBC32D200627B50 /* UIResponder+Extension.swift in Sources */,

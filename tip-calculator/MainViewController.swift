@@ -22,6 +22,23 @@ class MainViewController: UIViewController {
     
     private var cancellables = Set<AnyCancellable>()
     
+    private lazy var viewTapPublisher: AnyPublisher<Void, Never> = {
+        let tapGesture = UITapGestureRecognizer(target: self, action: nil)
+        view.addGestureRecognizer(tapGesture)
+        return tapGesture.tapPublisher.flatMap { _ in
+            Just(())
+        }.eraseToAnyPublisher()
+    }()
+
+    private lazy var logoViewTapPublisher: AnyPublisher<Void, Never> = {
+        let tapGesture = UITapGestureRecognizer(target: self, action: nil)
+        tapGesture.numberOfTapsRequired = 2
+        logoView.addGestureRecognizer(tapGesture)
+        return tapGesture.tapPublisher.flatMap { _ in
+            Just(())
+        }.eraseToAnyPublisher()
+    }()
+    
     private lazy var mainStackView: UIStackView = {
        let stackView = UIStackView(arrangedSubviews: [
             logoView,
@@ -51,6 +68,7 @@ class MainViewController: UIViewController {
         makeHierarchy()
         makeConstraints()
         makeBinds()
+        makeObserve()
     }
     
     private func makeBinds() {
@@ -58,7 +76,8 @@ class MainViewController: UIViewController {
         let inputPublisher = MainViewModel.inputPublisher(
             billPublisher: billInputView.valuePublisher,
             tipPublisher: tipInputView.valuePublisher,
-            splitPublisher: splitInputView.valuePublisher
+            splitPublisher: splitInputView.valuePublisher,
+            logoTapPublisher: logoViewTapPublisher
         )
         
         let outputPublisher = viewModel.handler(input: inputPublisher)
@@ -69,6 +88,29 @@ class MainViewController: UIViewController {
             }
             .store(in: &cancellables)
         
+        outputPublisher.resultCalculatorPublisher.sink { [unowned self] _ in
+            billInputView.reset()
+            tipInputView.reset()
+            splitInputView.reset()
+            
+            UIView.animate(withDuration: 0.1,
+                           delay: 0,
+                           usingSpringWithDamping: 0.5,
+                           initialSpringVelocity: 0.5,
+                           options: .curveEaseInOut) {
+                self.logoView.transform = .init(scaleX: 1.5, y: 1.5)
+            } completion: { _ in
+                UIView.animate(withDuration: 0.1) {
+                    self.logoView.transform = .identity
+                }
+            }
+        }.store(in: &cancellables)
+    }
+    
+    private func makeObserve() {
+        viewTapPublisher.sink { [unowned self] _ in
+            view.endEditing(true)
+        }.store(in: &cancellables)
     }
     
     private func makeLayout() {

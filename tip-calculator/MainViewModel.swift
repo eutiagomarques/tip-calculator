@@ -15,10 +15,18 @@ class MainViewModel {
         let billPublisher: AnyPublisher<Double, Never>
         let tipPublisher: AnyPublisher<Tip, Never>
         let splitPublisher: AnyPublisher<Int, Never>
+        let logoTapPublisher: AnyPublisher<Void, Never>
     }
 
     struct outputPublisher {
         let updateViewPublisher: AnyPublisher<Result, Never>
+        let resultCalculatorPublisher: AnyPublisher<Void, Never>
+    }
+    
+    private let audioPlayerService: AudioPlayerService
+    
+    init(audioPlayer: AudioPlayerService = DefaultAudioPlayer()) {
+        self.audioPlayerService = audioPlayer
     }
     
     
@@ -34,9 +42,17 @@ class MainViewModel {
                 let amountPerPerson = totalBill / Double(split)
                 return Result(amountPerPerson: amountPerPerson, totalBill: totalBill, totalTip: totalTip)
             }.eraseToAnyPublisher()
+        
+        let resultCalculatorPublisher = input.logoTapPublisher.handleEvents(receiveOutput: { [unowned self] in
+            audioPlayerService.play()
+        }).flatMap {
+            return Just($0)
+        }.eraseToAnyPublisher()
                 
-        return outputPublisher(updateViewPublisher: updateViewPublisher)
+        return outputPublisher(updateViewPublisher: updateViewPublisher,
+                               resultCalculatorPublisher: resultCalculatorPublisher)
     }
+    
     private func getTotalBill(bill: Double, tip: Tip) -> Double {
         return bill + getTipValue(bill: bill, tip: tip)
     }
